@@ -5,8 +5,7 @@ export default function updateHandler(req, res) {
 
     const list = req.body == '[]' ? [] : JSON.parse(req.body);
 
-
-    // if (list.length < 1) return json.status(400).json({ error: 'Список пуст' }).end();
+    console.log('update -> list:', list);
 
     const filePath = path.resolve(__dirname, '..', '..', '..', '..', 'public', 'iptvlist.txt');
     const jsonPath = path.resolve(__dirname, '..', '..', '..', '..', 'src', 'iptvlist.json');
@@ -16,6 +15,8 @@ export default function updateHandler(req, res) {
         fileContent += `#EXTINF:0, ${item.name}\n`;
         fileContent += `${item.href}\n`;
     });
+
+    console.log('fileContent:', fileContent);
 
     fs.writeFile(filePath, fileContent, (err) => {
         if (err)
