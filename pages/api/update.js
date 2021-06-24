@@ -22,10 +22,10 @@ export default function updateHandler(req, res) {
         if (err)
             return res.status(500).json({ error: err.message });
     });
-    fs.writeFile(jsonPath, req.body, 'utf8', (err) => {
-        if (err)
-            return res.status(500).json({ error: err.message });
-    });
+    // fs.writeFile(jsonPath, req.body, 'utf8', (err) => {
+    //     if (err)
+    //         return res.status(500).json({ error: err.message });
+    // });
 
     return res.status(200).json({ success: true });
 }
