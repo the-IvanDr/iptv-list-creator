@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.SuccessAlert{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid $table-border-color;
+
+    transition: all .4s;
+
+    &.visible{
+        transform: translate(-50%, 0);
+    }
+
+    span{
+        margin-left: 10px;
+    }
+
+    img{
+        display: block;
+        margin-right: 10px;
+    }
+}
