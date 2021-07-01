@@ -37,6 +37,7 @@ export default function updateHandler(req, res) {
         if (err)
             return res.status(500).json({ error: err.message, kek: 'lol, error is in writeFile() in .txt file' });
     });
+    
     fs.writeFile(jsonPath, req.body, 'utf8', (err) => {
         if (err)
             return res.status(500).json({ error: err.message, kek: 'lol, one more error is in writeFile() in .json file' });
