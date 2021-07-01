@@ -17,7 +17,7 @@ export default function updateHandler(req, res) {
     
     console.log("DIRECTORY: ***==============================================***");
 
-    fs.readdir(jsonPath, (err, files) => {
+    fs.readdir(path.resolve(__dirname, '..', '..', '..', '..', 'public'), (err, files) => {
         files.forEach(file => {
             console.log(file);
         });
