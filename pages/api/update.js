@@ -35,12 +35,12 @@ export default function updateHandler(req, res) {
 
     fs.writeFile(filePath, fileContent, (err) => {
         if (err)
-            return res.status(500).json({ error: err.message });
+            return res.status(500).json({ error: err.message }).end();
     });
     fs.writeFile(jsonPath, req.body, 'utf8', (err) => {
         if (err)
-            return res.status(500).json({ error: err.message });
+            return res.status(500).json({ error: err.message }).end();
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true }).end();
 }
