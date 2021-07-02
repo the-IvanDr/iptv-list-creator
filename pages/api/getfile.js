@@ -11,13 +11,8 @@ export default async function getFile(req, res) {
         iptvTextContent += `EXTINF: 0, ${item.name}\n`;
         iptvTextContent += `${item.href}\n`;
     });   
-
-    // res.setHeader('Content-type', "application/octet-stream");
-    // res.setHeader('Content-disposition', 'attachment; filename=file.m3u');
-    // res.send(iptvTextContent);
     
-    // res.setHeader('Content-type', "text/html");
-    // res.setHeader('Content-disposition', 'attachment; filename=file.m3u');
-    // res.send(iptvTextContent);
-    res.send(iptvTextContent)
+    res.setHeader('Content-type', "application/octet-stream");
+    res.setHeader('Content-disposition', 'attachment; filename=file.m3u');
+    res.send(iptvTextContent);
 }
