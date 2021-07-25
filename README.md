@@ -1,5 +1,5 @@
 This application allows you to create and edit the m3u/m3u8 IPTV list, that you can use on your device (receiver, tv box, etc.)
-DEMO: https://iptvlist-creator.herokuapp.com/
+
 ## Getting Started
 
 First, run the development server:
